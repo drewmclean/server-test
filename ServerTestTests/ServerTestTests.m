@@ -39,6 +39,20 @@
     // This is an example of a functional test case.
     XCTAssert(YES, @"Pass");
 }
+- (void)testExample4 {
+    // This is an example of a functional test case.
+    XCTAssert(YES, @"Pass");
+}
+
+- (void)testExample5 {
+    // This is an example of a functional test case.
+    XCTAssert(YES, @"Pass");
+}
+
+- (void)testExample6 {
+    // This is an example of a functional test case.
+    XCTAssert(YES, @"Pass");
+}
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.

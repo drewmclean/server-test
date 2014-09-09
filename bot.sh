@@ -1,8 +1,4 @@
 #!/bin/bash
-# ------------------------------------------------------------------
-# [Author] Title
-#          Description
-# ------------------------------------------------------------------
 
 xcodebuild -project ./ServerTest.xcodeproj -target "ServerTest" -showBuildSettings
 
