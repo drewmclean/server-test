@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		578BF29D19BF84CA00010167 /* bot.sh in Resources */ = {isa = PBXBuildFile; fileRef = 578BF29C19BF84CA00010167 /* bot.sh */; };
 		578BF29E19BF84CA00010167 /* bot.sh in Resources */ = {isa = PBXBuildFile; fileRef = 578BF29C19BF84CA00010167 /* bot.sh */; };
+		57AEA09F19BFAC7300521181 /* increment_build_number.sh in Resources */ = {isa = PBXBuildFile; fileRef = 57AEA09E19BFAC7300521181 /* increment_build_number.sh */; };
 		57C7B06319BA787500688EE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B06219BA787500688EE4 /* main.m */; };
 		57C7B06619BA787500688EE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B06519BA787500688EE4 /* AppDelegate.m */; };
 		57C7B06919BA787500688EE4 /* ServerTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B06719BA787500688EE4 /* ServerTest.xcdatamodeld */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		3846C1A32FF2469CB3FF88BE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		578BF29C19BF84CA00010167 /* bot.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = bot.sh; path = ../bot.sh; sourceTree = "<group>"; };
+		57AEA09E19BFAC7300521181 /* increment_build_number.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = increment_build_number.sh; sourceTree = "<group>"; };
 		57C7B05D19BA787500688EE4 /* ServerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57C7B06119BA787500688EE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57C7B06219BA787500688EE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		57C7B06019BA787500688EE4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				57AEA09E19BFAC7300521181 /* increment_build_number.sh */,
 				578BF29C19BF84CA00010167 /* bot.sh */,
 				57C7B08619BA79C600688EE4 /* Podfile */,
 				57C7B06119BA787500688EE4 /* Info.plist */,
@@ -224,6 +227,7 @@
 			files = (
 				57C7B06F19BA787500688EE4 /* Main.storyboard in Resources */,
 				57C7B07119BA787500688EE4 /* Images.xcassets in Resources */,
+				57AEA09F19BFAC7300521181 /* increment_build_number.sh in Resources */,
 				578BF29D19BF84CA00010167 /* bot.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
