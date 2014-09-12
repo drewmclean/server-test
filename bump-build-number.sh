@@ -37,9 +37,10 @@ function git_tag() {
         exit
     fi
 
-    git tag -a $_label -m "Tag build $_version"
+    git tag -a $_version -m "Tag build $_version"
     git push --tags
 
+    git add .
     git commit -m "Increment build number (_version)"
     git push
 }
@@ -50,8 +51,8 @@ echo "$NOTE"
 next_build_version
  
 # grab the marketing and build versions
-marketing_version=`getAgvMarketingVersion`
-new_version=`getAgvBuildVersion`
+marketing_version=`get_marketing_version`
+new_version=`get_build_version`
  
 # will tag in this format; e.g. {marketing_version}.{build_version} 2.1.4.68
 version_id="$marketing_version.$new_version"
