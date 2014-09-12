@@ -1,7 +1,8 @@
 #!/bin/bash
- 
+
 #
 # Use agvtool to set Xcode project build number and create git tag
+# Commit the updated .xcproject and plist files back to git
 # Note: requires Xcode project configured to use Apple Generic Versioning and git
 #
 # Usage: set_agv_ver.sh 123
@@ -9,80 +10,54 @@
 # src: https://gist.github.com/rob-murray/8644974
 #
  
-NOTE="'set_agv_ver.sh' will set build version number of Xcode project"
+NOTE="'bump-build-number.sh' will increment build version number of Xcode project"
  
 # just increment the version
-function bump_version() {
+function next_build_version() {
     # bump the version number
     $(agvtool next-version -all &> /dev/null)
 }
  
-# set Xcode project to version passed as argument
-function set_version() {
-    local _version="$1"
-    
-    if [[ -z "$_version" ]]
-    then
-        echo "Version is empty."
-        exit
-    fi
- 
-    # bump the version number
-    $(agvtool new-version -all $_version &> /dev/null)
-}
- 
-function getAgvMarketingVersion() {
+function get_marketing_version() {
     agvtool what-marketing-version -terse1
 }
- 
-function getAgvBuildVersion() {
+
+function get_build_version() {
     agvtool what-version -terse
 }
- 
+
 # function git_tag(label, message)
 function git_tag() {
  
-    local _label="$1"
-    local _message="$2"
+    local _version="$1"
  
-    if [[ -z "$_label" ]]
+    if [[ -z "$_version" ]]
     then
-        echo "Param label is empty."
+        echo "Param version is empty."
         exit
     fi
- 
-    if [[ -z $_message ]]
-    then
-        echo "Param message is empty."
-        exit
-    fi
- 
-    git tag -a $_label -m"$_message"
-    git push --tags
-}
- 
-# entry
-if [ $# -lt 1 ]
-then
-  echo "Usage: $0 version_id"
-  exit
-fi
 
-VERSION="$1"
+    git tag -a $_version -m "Tag build $_version"
+    git push --tags
+
+    git add .
+    git commit -m "Increment build number (_version)"
+    git push
+}
  
 echo "$NOTE"
  
 #set_version $VERSION
-bump_version
+next_build_version
  
 # grab the marketing and build versions
-marketing_version=`getAgvMarketingVersion`
-new_version=`getAgvBuildVersion`
+marketing_version=`get_marketing_version`
+new_version=`get_build_version`
  
 # will tag in this format; e.g. {marketing_version}.{build_version} 2.1.4.68
 version_id="$marketing_version.$new_version"
- 
+
 # commit changes and tag
-git_tag $version_id "Tag build $version_id"
+git_tag $version_id
  
-echo "Set Xcode project to build version $VERSION and tagged with label $version_id"
+echo "Set Xcode project to build version $new_version and tagged with label $version_id"
