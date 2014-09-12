@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		578BF29D19BF84CA00010167 /* bot.sh in Resources */ = {isa = PBXBuildFile; fileRef = 578BF29C19BF84CA00010167 /* bot.sh */; };
-		578BF29E19BF84CA00010167 /* bot.sh in Resources */ = {isa = PBXBuildFile; fileRef = 578BF29C19BF84CA00010167 /* bot.sh */; };
+		5770645419C37FAD00BEF37E /* set_agv_ver.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5770645319C37FAD00BEF37E /* set_agv_ver.sh */; };
 		57AEA09F19BFAC7300521181 /* increment_build_number.sh in Resources */ = {isa = PBXBuildFile; fileRef = 57AEA09E19BFAC7300521181 /* increment_build_number.sh */; };
 		57C7B06319BA787500688EE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B06219BA787500688EE4 /* main.m */; };
 		57C7B06619BA787500688EE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B06519BA787500688EE4 /* AppDelegate.m */; };
@@ -32,7 +31,7 @@
 
 /* Begin PBXFileReference section */
 		3846C1A32FF2469CB3FF88BE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		578BF29C19BF84CA00010167 /* bot.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = bot.sh; path = ../bot.sh; sourceTree = "<group>"; };
+		5770645319C37FAD00BEF37E /* set_agv_ver.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = set_agv_ver.sh; sourceTree = "<group>"; };
 		57AEA09E19BFAC7300521181 /* increment_build_number.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = increment_build_number.sh; sourceTree = "<group>"; };
 		57C7B05D19BA787500688EE4 /* ServerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57C7B06119BA787500688EE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,11 +77,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5770645519C37FB600BEF37E /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				5770645319C37FAD00BEF37E /* set_agv_ver.sh */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 		57C7B05419BA787500688EE4 = {
 			isa = PBXGroup;
 			children = (
 				57C7B05F19BA787500688EE4 /* ServerTest */,
 				57C7B07919BA787500688EE4 /* ServerTestTests */,
+				5770645519C37FB600BEF37E /* Tools */,
 				57C7B05E19BA787500688EE4 /* Products */,
 				6CDA64D6E49E455E80483A2F /* Pods.xcconfig */,
 				1DF29C91CCA248DC824926DB /* Frameworks */,
@@ -117,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				57AEA09E19BFAC7300521181 /* increment_build_number.sh */,
-				578BF29C19BF84CA00010167 /* bot.sh */,
 				57C7B08619BA79C600688EE4 /* Podfile */,
 				57C7B06119BA787500688EE4 /* Info.plist */,
 				57C7B06219BA787500688EE4 /* main.m */,
@@ -225,10 +232,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5770645419C37FAD00BEF37E /* set_agv_ver.sh in Resources */,
 				57C7B06F19BA787500688EE4 /* Main.storyboard in Resources */,
 				57C7B07119BA787500688EE4 /* Images.xcassets in Resources */,
 				57AEA09F19BFAC7300521181 /* increment_build_number.sh in Resources */,
-				578BF29D19BF84CA00010167 /* bot.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +243,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				578BF29E19BF84CA00010167 /* bot.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,10 +366,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 5;
 				INFOPLIST_FILE = ServerTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = "Ad Hoc";
 		};
@@ -467,10 +475,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 5;
 				INFOPLIST_FILE = ServerTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -481,10 +491,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 5;
 				INFOPLIST_FILE = ServerTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
