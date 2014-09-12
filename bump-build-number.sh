@@ -60,4 +60,4 @@ version_id="$marketing_version.$new_version"
 # commit changes and tag
 git_tag $version_id
  
-echo "Set Xcode project to build version $VERSION and tagged with label $version_id"
+echo "Set Xcode project to build version $new_version and tagged with label $version_id"
