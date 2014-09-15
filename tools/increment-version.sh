@@ -42,7 +42,7 @@ function git_tag() {
     git push --tags
 
     git add .
-    git commit -m "Increment build number (_version)"
+    git commit -m "Increment build number ($_version)"
     git push
 }
 
@@ -57,9 +57,9 @@ marketing_version=`get_marketing_version`
 new_version=`get_build_version`
  
 # will tag in this format; e.g. {marketing_version}.{build_version} 2.1.4.68
-version_id="$marketing_version.$new_version"
+# version_id="$marketing_version.$new_version"
 
 # commit changes and tag
-#git_tag $version_id
+git_tag $version_id
  
 echo "Set Xcode project to build version $new_version and tagged with label $version_id"
