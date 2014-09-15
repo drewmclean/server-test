@@ -12,11 +12,11 @@
 
 NOTE="'increment-version.sh' will increment build version number of Xcode project"
 
- 
+
 # just increment the version
 function next_build_version() {
     # bump the version number
-    $agvtool next-version -all
+    agvtool next-version -all
 }
  
 function get_marketing_version() {
@@ -47,7 +47,8 @@ function git_tag() {
 }
 
 echo "$NOTE"
- 
+
+
 #set_version $VERSION
 next_build_version
  
@@ -59,6 +60,6 @@ new_version=`get_build_version`
 version_id="$marketing_version.$new_version"
 
 # commit changes and tag
-git_tag $version_id
+#git_tag $version_id
  
 echo "Set Xcode project to build version $new_version and tagged with label $version_id"
